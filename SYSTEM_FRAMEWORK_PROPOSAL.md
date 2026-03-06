@@ -987,3 +987,17 @@ v3 的核心，不再是“拥有更多技能”，而是：
 - 必须输出 baseline metrics（task/subtask success、auto_execute 占比、canary 通过率、rollback 触发率、top failure modes、rework rate）
 - decision trace 必须携带版本字段（`trace_version` / `schema_version` / `router_version` / `policy_version`）
 - 必须至少跑一个真实样本包（非 purely synthetic）
+
+---
+
+# 27. 回归稳定性机制（Golden Set + Layered Dashboard + Failure Expectations）
+
+- 必须维护固定黄金样本集（至少 5 类）：安全写文件、普通 coding 修改、research/planning、多子任务依赖、高风险回滚。
+- 每次修改以下任意项都必须跑黄金样本回归：schema、router 权重、proposal policy、governance 阈值。
+- baseline 必须固定口径：`baseline_window` + `sample_scope` + `environment`（dev/staging/prod）。
+- 必须维护 failure injection 预期行为表，避免测试只验证“没报错”。
+- 分层看板必须至少覆盖：
+  - 执行层：task/subtask success、rework
+  - 路由层：auto_execute 占比、分数分布、near-threshold
+  - 进化层：proposal 生成率、canary 通过率、rollback 率
+  - 记忆层：recall hit、memory_miss 占比、candidate promote 率

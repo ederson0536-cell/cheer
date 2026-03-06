@@ -91,6 +91,10 @@
         "final_score": 0.66,
         "decision": "cautious_review_or_canary"
       }
+    ],
+    "near_threshold_cases": [
+      "st_001",
+      "st_003"
     ]
   },
   "proposal_publish_loop": {
@@ -197,7 +201,7 @@
             "failure_penalty": 1.0
           },
           "final_score": 0.2,
-          "decision": "cautious_review_or_canary",
+          "decision": "reject_auto",
           "metadata": {
             "injected_failure": "tool_error"
           }
@@ -267,14 +271,76 @@
           }
         }
       }
+    ],
+    "expectation_source": "/workspace/cheer/evoclaw/runtime/contracts/expectations/failure_injection_expectations.json"
+  },
+  "golden_regression": {
+    "suite_name": "golden_runtime_regression",
+    "window": "rolling_30d",
+    "environment": "staging",
+    "total": 5,
+    "passed": 5,
+    "results": [
+      {
+        "id": "01_safe_file_write",
+        "category": "safe_write",
+        "status": "passed"
+      },
+      {
+        "id": "02_coding_modify",
+        "category": "coding_modify",
+        "status": "passed"
+      },
+      {
+        "id": "03_research_planning",
+        "category": "research_planning",
+        "status": "passed"
+      },
+      {
+        "id": "04_multi_subtask_dependency",
+        "category": "multi_subtask_dependency",
+        "status": "passed"
+      },
+      {
+        "id": "05_high_risk_rollback",
+        "category": "high_risk_rollback",
+        "status": "passed"
+      }
     ]
   },
-  "baseline_metrics": {
-    "task_success_rate": 1.0,
-    "subtask_success_rate": 1.0,
-    "routing_auto_execute_ratio": 0.333,
-    "canary_pass_rate": 0.4,
-    "rollback_trigger_rate": 0.6,
+  "baseline_layered_dashboard": {
+    "meta": {
+      "environment": "staging",
+      "baseline_window": "rolling_30d",
+      "sample_scope": "golden_runtime_regression"
+    },
+    "execution_layer": {
+      "task_success_rate": 1.0,
+      "subtask_success_rate": 1.0,
+      "rework_rate": 0.333
+    },
+    "routing_layer": {
+      "auto_execute_ratio": 0.333,
+      "score_distribution": {
+        "auto_execute": 1,
+        "near_threshold": 2,
+        "reject_auto": 0
+      },
+      "near_threshold_cases": [
+        "st_001",
+        "st_003"
+      ]
+    },
+    "evolution_layer": {
+      "proposal_generation_rate": 1.0,
+      "canary_pass_rate": 0.4,
+      "rollback_rate": 0.6
+    },
+    "memory_layer": {
+      "recall_hit_rate": 1.0,
+      "memory_miss_ratio": 0.2,
+      "candidate_promote_rate": 0.0
+    },
     "top_failure_modes": [
       [
         "memory_miss",
@@ -296,7 +362,6 @@
         "file_scope_error",
         1
       ]
-    ],
-    "rework_rate": 0.333
+    ]
   }
 }

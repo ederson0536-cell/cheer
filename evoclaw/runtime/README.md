@@ -1,27 +1,26 @@
 # Runtime Contracts (Executable Artifacts)
 
-This folder contains the first 4 implementation artifacts extracted from `SYSTEM_FRAMEWORK_PROPOSAL.md`:
+This folder contains executable artifacts extracted from `SYSTEM_FRAMEWORK_PROPOSAL.md`.
 
-1. **Task / Subtask schema**
-   - `contracts/task_subtask.schema.json`
-   - `examples/task_subtask.example.json`
-
-2. **Skill Registry + Routing Score**
-   - `contracts/skill_registry.schema.json`
-   - `routing_score.py`
-   - `examples/skill_registry.example.json`
-
-3. **Memory write/read contract**
-   - `contracts/memory_contract.yaml`
-
-4. **Proposal -> Review -> Publish flow**
-   - `contracts/proposal_pipeline.schema.json`
-   - `examples/proposal_pipeline.example.json`
-
-Additional governance/debug artifacts:
-- `contracts/canonical_field_dictionary.yaml`
+Core contracts and references:
+- `contracts/task_subtask.schema.json`
+- `contracts/skill_registry.schema.json`
+- `contracts/memory_contract.yaml`
+- `contracts/proposal_pipeline.schema.json`
 - `contracts/decision_trace.schema.json`
+- `contracts/canonical_field_dictionary.yaml`
+
+Key examples:
+- `examples/task_subtask.example.json`
+- `examples/skill_registry.example.json`
+- `examples/proposal_pipeline.example.json`
 - `examples/decision_trace.example.json`
+- `examples/golden/` (golden regression suite)
+
+Validators and loop tests:
+- `evoclaw/validators/validate_runtime_contracts.py`
+- `evoclaw/validators/test_runtime_loops.py`
+- `evoclaw/validators/test_real_sample_package.py`
 
 ## Quick checks
 
@@ -31,3 +30,9 @@ python3 evoclaw/runtime/routing_score.py evoclaw/runtime/examples/skill_registry
 python3 evoclaw/validators/test_runtime_loops.py
 python3 evoclaw/validators/test_real_sample_package.py
 ```
+
+## Generated outputs
+
+- `examples/decision_trace.loop_test.json`
+- `examples/baseline.layered_dashboard.json`
+- `examples/decision_trace.real_sample.json`
