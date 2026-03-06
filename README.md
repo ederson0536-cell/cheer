@@ -25,7 +25,8 @@
 ├── USER.md
 ├── README.md
 ├── skills/
-│   └── seo-kit/
+│   ├── seo-kit/
+│   └── self-learning-skills/
 └── evoclaw/
     ├── README.md
     ├── SKILL.md
@@ -50,7 +51,6 @@
 - `evoclaw/runtime/contracts/`：机器可校验契约（schema / policy / boundary）
 - `evoclaw/runtime/examples/`：黄金样本、脏输入样本、决策 trace、回归结果
 - `evoclaw/validators/`：闭环测试、回归报告、staging 试跑脚本
-- `skills/PORTFOLIO_DECISION.md`：技能保留/降级/归档/删除建议（按治理与成本分层）
 
 ---
 

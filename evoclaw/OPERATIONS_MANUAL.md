@@ -69,19 +69,6 @@
 
 ## 4. 详细使用手册（一步一步）
 
-## 4.0 验证器清单确认（避免“脚本不存在”）
-
-先确认本地可用验证器：
-
-```bash
-cd /workspace/cheer
-find evoclaw/validators -maxdepth 1 -type f -name "*.py" | sort
-```
-
-> 当前仓库同时包含：
-> - Runtime validators（如 `validate_runtime_contracts.py`、`test_runtime_loops.py`）
-> - EvoClaw pipeline validators（如 `validate_experience.py`、`validate_reflection.py`、`validate_proposal.py` 等）
-
 ## 4.1 初始化检查
 
 ```bash
