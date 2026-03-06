@@ -981,3 +981,9 @@ v3 的核心，不再是“拥有更多技能”，而是：
 3. 提案发布闭环（proposal -> review -> canary -> publish -> rollback）
 
 参考脚本：`evoclaw/validators/test_runtime_loops.py`
+
+补充要求：
+- 必须包含 failure injection（`memory_miss` / `routing_error` / `tool_error` / `rule_conflict` / `file_scope_error`）
+- 必须输出 baseline metrics（task/subtask success、auto_execute 占比、canary 通过率、rollback 触发率、top failure modes、rework rate）
+- decision trace 必须携带版本字段（`trace_version` / `schema_version` / `router_version` / `policy_version`）
+- 必须至少跑一个真实样本包（非 purely synthetic）

@@ -10,6 +10,11 @@ import json
 import sys
 from dataclasses import asdict, dataclass
 
+TRACE_VERSION = "1.0.0"
+SCHEMA_VERSION = "decision-trace@1"
+ROUTER_VERSION = "router@0.2.0"
+POLICY_VERSION = "policy@2026-03-06"
+
 TRUST_MAP = {
     "unverified": 0.25,
     "low": 0.4,
@@ -95,6 +100,10 @@ def main() -> int:
         rows.append((skill["skill_id"], s, decision))
         traces.append(
             {
+                "trace_version": TRACE_VERSION,
+                "schema_version": SCHEMA_VERSION,
+                "router_version": ROUTER_VERSION,
+                "policy_version": POLICY_VERSION,
                 "object_id": skill["skill_id"],
                 "decision_type": "subtask_routing",
                 "selected": skill["skill_id"],

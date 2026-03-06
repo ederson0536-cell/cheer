@@ -1,5 +1,9 @@
 [
   {
+    "trace_version": "1.0.0",
+    "schema_version": "decision-trace@1",
+    "router_version": "router@0.2.0",
+    "policy_version": "policy@2026-03-06",
     "object_id": "coding_editor_v1",
     "decision_type": "subtask_routing",
     "selected": "coding_editor_v1",
@@ -19,6 +23,10 @@
     "decision": "reject_auto"
   },
   {
+    "trace_version": "1.0.0",
+    "schema_version": "decision-trace@1",
+    "router_version": "router@0.2.0",
+    "policy_version": "policy@2026-03-06",
     "object_id": "generic_helper_v1",
     "decision_type": "subtask_routing",
     "selected": "generic_helper_v1",

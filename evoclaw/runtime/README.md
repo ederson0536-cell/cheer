@@ -27,6 +27,7 @@ Additional governance/debug artifacts:
 
 ```bash
 python3 evoclaw/validators/validate_runtime_contracts.py
-python3 evoclaw/runtime/routing_score.py evoclaw/runtime/examples/skill_registry.example.json
+python3 evoclaw/runtime/routing_score.py evoclaw/runtime/examples/skill_registry.example.json evoclaw/runtime/examples/routing_weights.example.json evoclaw/runtime/examples/decision_trace.from_routing.json
 python3 evoclaw/validators/test_runtime_loops.py
+python3 evoclaw/validators/test_real_sample_package.py
 ```
