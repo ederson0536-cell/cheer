@@ -1,0 +1,98 @@
+{
+  "results": [
+    {
+      "agent": "a_login",
+      "task": "task_login",
+      "duration": 24.258906
+    },
+    {
+      "agent": "a_rest",
+      "task": "task_restapi",
+      "duration": 24.459908
+    },
+    {
+      "agent": "a_full",
+      "task": "task_fullstack",
+      "duration": 24.271335
+    },
+    {
+      "agent": "a_docker",
+      "task": "task_docker",
+      "duration": 24.216587
+    },
+    {
+      "agent": "a_micro",
+      "task": "task_microservice",
+      "duration": 24.305804
+    },
+    {
+      "agent": "a_db",
+      "task": "task_database",
+      "duration": 24.254071
+    },
+    {
+      "agent": "a_login",
+      "task": "task_login",
+      "duration": 0.068562
+    },
+    {
+      "agent": "a_rest",
+      "task": "task_restapi",
+      "duration": 0.071242
+    },
+    {
+      "agent": "a_full",
+      "task": "task_fullstack",
+      "duration": 0.038748
+    },
+    {
+      "agent": "a_docker",
+      "task": "task_docker",
+      "duration": 0.056392
+    },
+    {
+      "agent": "a_micro",
+      "task": "task_microservice",
+      "duration": 0.070945
+    },
+    {
+      "agent": "a_db",
+      "task": "task_database",
+      "duration": 0.071173
+    },
+    {
+      "agent": "a_login",
+      "task": "task_login",
+      "duration": 0.089711
+    },
+    {
+      "agent": "a_rest",
+      "task": "task_restapi",
+      "duration": 0.0734
+    },
+    {
+      "agent": "a_full",
+      "task": "task_fullstack",
+      "duration": 0.068211
+    },
+    {
+      "agent": "a_docker",
+      "task": "task_docker",
+      "duration": 0.097653
+    },
+    {
+      "agent": "a_micro",
+      "task": "task_microservice",
+      "duration": 0.109937
+    },
+    {
+      "agent": "a_db",
+      "task": "task_database",
+      "duration": 0.115099
+    }
+  ],
+  "stats": {
+    "knowledge": 22
+  },
+  "time": "2026-02-08T22:33:47.994629"
+}
