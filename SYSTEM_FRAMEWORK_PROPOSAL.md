@@ -957,3 +957,15 @@ v3 的核心，不再是“拥有更多技能”，而是：
   "config_version": "cfg_20260306_001"
 }
 ```
+
+---
+
+# 25. 已落地的首批实现件（Repository Paths）
+
+- Task/Subtask Contract: `evoclaw/runtime/contracts/task_subtask.schema.json`
+- Skill Registry Contract: `evoclaw/runtime/contracts/skill_registry.schema.json`
+- Routing Score Reference: `evoclaw/runtime/routing_score.py`
+- Memory Write/Read Contract: `evoclaw/runtime/contracts/memory_contract.yaml`
+- Proposal Pipeline Contract: `evoclaw/runtime/contracts/proposal_pipeline.schema.json`
+- Contract Examples: `evoclaw/runtime/examples/`
+- Contract Validator: `evoclaw/validators/validate_runtime_contracts.py`
