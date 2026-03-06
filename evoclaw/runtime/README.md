@@ -1,6 +1,7 @@
 # Runtime Contracts (Executable Artifacts)
 
 Core contracts:
+- `../OPERATIONS_MANUAL.md` (落地执行手册)
 - `contracts/task_subtask.schema.json`
 - `contracts/skill_registry.schema.json`
 - `contracts/memory_contract.yaml`
