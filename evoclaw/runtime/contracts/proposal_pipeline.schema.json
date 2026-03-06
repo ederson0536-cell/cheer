@@ -16,7 +16,10 @@
           "enum": ["rule_update_candidate", "routing_weight_update_candidate", "memory_policy_update_candidate"]
         },
         "payload": {"type": "object"},
-        "status": {"type": "string", "enum": ["collected", "clustered", "candidate_generated"]}
+        "status": {
+          "type": "string",
+          "enum": ["draft", "candidate", "review_pending", "canary", "active", "rejected", "rolled_back", "archived"]
+        }
       },
       "additionalProperties": false
     },

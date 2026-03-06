@@ -13,6 +13,7 @@ PAIRS = [
     (CONTRACTS / "task_subtask.schema.json", EXAMPLES / "task_subtask.example.json"),
     (CONTRACTS / "skill_registry.schema.json", EXAMPLES / "skill_registry.example.json"),
     (CONTRACTS / "proposal_pipeline.schema.json", EXAMPLES / "proposal_pipeline.example.json"),
+    (CONTRACTS / "decision_trace.schema.json", EXAMPLES / "decision_trace.example.json"),
 ]
 
 

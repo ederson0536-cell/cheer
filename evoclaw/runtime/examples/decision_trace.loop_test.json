@@ -1,0 +1,96 @@
+{
+  "single_task_loop": {
+    "task_id": "t_001",
+    "before_task": {
+      "task_guardrail_bundle": [
+        "must_follow_P0_P1",
+        "respect_file_scope"
+      ],
+      "task_level_recall_packet": {
+        "rules": [
+          "rule_safe_edit"
+        ],
+        "experience": [
+          "similar_fix_001"
+        ]
+      }
+    },
+    "episodic_write": {
+      "object_type": "routing_outcome",
+      "task_id": "t_001",
+      "selected_skill": "coding_editor_v1",
+      "status": "success"
+    },
+    "proposal": {
+      "proposal_id": "pp_single_001",
+      "source": "after_task",
+      "candidate_type": "routing_weight_update_candidate",
+      "payload": {
+        "target": "coding_editor_v1",
+        "delta": {
+          "w2": 0.01
+        }
+      },
+      "status": "candidate"
+    }
+  },
+  "subtask_loop": {
+    "subtask_count": 3,
+    "decision_traces": [
+      {
+        "object_id": "st_001",
+        "decision_type": "subtask_routing",
+        "selected": "generic_helper_v1",
+        "candidates": [
+          "coding_editor_v1",
+          "generic_helper_v1"
+        ],
+        "score_breakdown": {
+          "scenario_match": 0.66
+        },
+        "final_score": 0.66,
+        "decision": "cautious_review_or_canary"
+      },
+      {
+        "object_id": "st_002",
+        "decision_type": "subtask_routing",
+        "selected": "coding_editor_v1",
+        "candidates": [
+          "coding_editor_v1",
+          "generic_helper_v1"
+        ],
+        "score_breakdown": {
+          "scenario_match": 0.82
+        },
+        "final_score": 0.82,
+        "decision": "auto_execute"
+      },
+      {
+        "object_id": "st_003",
+        "decision_type": "subtask_routing",
+        "selected": "generic_helper_v1",
+        "candidates": [
+          "coding_editor_v1",
+          "generic_helper_v1"
+        ],
+        "score_breakdown": {
+          "scenario_match": 0.66
+        },
+        "final_score": 0.66,
+        "decision": "cautious_review_or_canary"
+      }
+    ]
+  },
+  "proposal_publish_loop": {
+    "status_flow": [
+      "draft",
+      "candidate",
+      "review_pending",
+      "canary",
+      "active",
+      "rolled_back"
+    ],
+    "final_action": "rollback",
+    "rollback_reason": "canary_fail_rate_increase"
+  }
+}

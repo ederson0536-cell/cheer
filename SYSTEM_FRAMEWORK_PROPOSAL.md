@@ -969,3 +969,15 @@ v3 的核心，不再是“拥有更多技能”，而是：
 - Proposal Pipeline Contract: `evoclaw/runtime/contracts/proposal_pipeline.schema.json`
 - Contract Examples: `evoclaw/runtime/examples/`
 - Contract Validator: `evoclaw/validators/validate_runtime_contracts.py`
+
+---
+
+# 26. 运行闭环测试（Executable Loops）
+
+为避免“分段成立但全链路不通”，实现阶段必须执行三类闭环测试：
+
+1. 单任务闭环（Task Input -> before_task -> recall -> route -> episodic -> proposal）
+2. 子任务闭环（before_subtask -> route -> after_subtask 高分辨率样本）
+3. 提案发布闭环（proposal -> review -> canary -> publish -> rollback）
+
+参考脚本：`evoclaw/validators/test_runtime_loops.py`

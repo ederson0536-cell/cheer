@@ -3,8 +3,13 @@
     "proposal_id": "pp_001",
     "source": "after_subtask",
     "candidate_type": "routing_weight_update_candidate",
-    "payload": {"target": "coding_editor_v1", "delta": {"w2": 0.02}},
-    "status": "candidate_generated"
+    "payload": {
+      "target": "coding_editor_v1",
+      "delta": {
+        "w2": 0.02
+      }
+    },
+    "status": "candidate"
   },
   "review": {
     "review_id": "rv_001",

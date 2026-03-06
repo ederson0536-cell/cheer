@@ -18,9 +18,15 @@ This folder contains the first 4 implementation artifacts extracted from `SYSTEM
    - `contracts/proposal_pipeline.schema.json`
    - `examples/proposal_pipeline.example.json`
 
+Additional governance/debug artifacts:
+- `contracts/canonical_field_dictionary.yaml`
+- `contracts/decision_trace.schema.json`
+- `examples/decision_trace.example.json`
+
 ## Quick checks
 
 ```bash
 python3 evoclaw/validators/validate_runtime_contracts.py
 python3 evoclaw/runtime/routing_score.py evoclaw/runtime/examples/skill_registry.example.json
+python3 evoclaw/validators/test_runtime_loops.py
 ```
