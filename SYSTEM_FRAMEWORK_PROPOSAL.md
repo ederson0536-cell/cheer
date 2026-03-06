@@ -1001,3 +1001,13 @@ v3 的核心，不再是“拥有更多技能”，而是：
   - 路由层：auto_execute 占比、分数分布、near-threshold
   - 进化层：proposal 生成率、canary 通过率、rollback 率
   - 记忆层：recall hit、memory_miss 占比、candidate promote 率
+
+---
+
+# 28. 稳定化推进优先级（Dirty Inputs / Regression Report / Staging / Service Boundary）
+
+- 必须维护脏输入回归集（dirty suite），用于验证模糊输入与异常输入的鲁棒性。
+- 必须生成 `regression_report.json`，并输出 `pass / warning / fail` 结论。
+- baseline 必须支持分环境、分窗口比较（至少 `rolling_7d` 与 `rolling_30d`）。
+- 必须提供 staging 试运行入口，先覆盖 2~3 类低风险任务。
+- 即使不做完整持久服务，也必须先定义服务边界：调度入口、状态存储、trace 落盘、proposal review 队列。
